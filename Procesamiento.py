@@ -27,7 +27,7 @@ df['Duracion_Segundos'] = df['Duracion_Segundos'].apply(lambda x: x if x >= 0 el
 # format='mixed' y dayfirst=True le permiten a Pandas leer múltiples formatos sin borrar los datos
 df['Fecha_Hora'] = pd.to_datetime(df['Fecha_Hora'], format='mixed', dayfirst=True, errors='coerce')
 
-# Eliminar la zona horaria (si existe) para que Excel no genere errores al guardar
+# Eliminar la zona horaria para que Excel no genere errores al guardar
 df['Fecha_Hora'] = df['Fecha_Hora'].dt.tz_localize(None)
 
 # 6. Limpiar valores atípicos (La satisfacción en encuestas debe ser del 1 al 5)
